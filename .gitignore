@@ -1,0 +1,8 @@
+# Dependencies 
+/node_modules
+/client/node_modules
+
+
+# styles
+/client/src/styles/main.css
+/client/src/styles/main.css.map
