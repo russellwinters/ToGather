@@ -6,3 +6,7 @@
 # styles
 /client/src/styles/main.css
 /client/src/styles/main.css.map
+
+
+# hidden
+.env
