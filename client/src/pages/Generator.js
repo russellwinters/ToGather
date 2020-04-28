@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
+
+//components
 import Header from "../components/Header";
 import ActivityContainer from "../components/ActivityContainer";
 
+//assets
+import BackgroundDots from "../assets/Icons-svgs/white-dots-for-background.svg";
+import Balloons from "../assets/Icons-svgs/balloons.svg";
+
 export default function Generator({ match }) {
+  const [activities, setActivities] = useState([]);
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -60,8 +68,11 @@ export default function Generator({ match }) {
         <div className="generator__button">
           <button>New Activities</button>
         </div>
+
+        <img className="background-dots" src={BackgroundDots} alt="dots" />
+        <img className="balloons-image" src={Balloons} alt="balloons" />
       </form>
-      <ActivityContainer />
+      <ActivityContainer activities={activities} />
     </div>
   );
 }

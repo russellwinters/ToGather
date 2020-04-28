@@ -1,4 +1,5 @@
 .generator {
+  position: relative;
   height: 484px;
   padding: 72px 20vw;
   display: flex;
@@ -40,5 +41,21 @@
     & * {
       width: 100%;
     }
+  }
+
+  .background-dots {
+    position: absolute;
+    left: 58px;
+    top: 145px;
+    width: 200px;
+    height: 220px;
+  }
+
+  .balloons-image {
+    position: absolute;
+    right: 28px;
+    top: 110px;
+    width: 286px;
+    height: 386px;
   }
 }

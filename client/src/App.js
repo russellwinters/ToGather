@@ -56,14 +56,14 @@ function App() {
         <Route path="/generator" component={Generator} />
         <Route path="/about" component={Exercise} />
       </Switch>
-      <input onChange={(event) => setResponse(event.target.value)}></input>
+      {/* <input onChange={(event) => setResponse(event.target.value)}></input>
       <button onClick={() => test(response)}>button</button>
       <div>
         <h5>Online Users</h5>
         {userList}
       </div>
       <input onChange={(event) => setTest(event.target.value)}></input>
-      <button onClick={() => directMessage(tests)}>Hello</button>
+      <button onClick={() => directMessage(tests)}>Hello</button> */}
     </Router>
   );
 }
