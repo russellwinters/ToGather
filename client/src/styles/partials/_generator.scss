@@ -1,0 +1,44 @@
+.generator {
+  height: 484px;
+  padding: 72px 20vw;
+  display: flex;
+  justify-content: space-between;
+  background-color: #2fa5b1;
+
+  & * {
+    height: 54px;
+    border-radius: 4px;
+  }
+
+  &__categories {
+    width: 216px;
+
+    & * {
+      width: 100%;
+    }
+  }
+
+  &__timer {
+    width: 169px;
+
+    & * {
+      width: 100%;
+    }
+  }
+
+  &__players {
+    width: 188px;
+
+    & * {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    width: 233px;
+
+    & * {
+      width: 100%;
+    }
+  }
+}
