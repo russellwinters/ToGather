@@ -1,17 +1,22 @@
 import React from "react";
+import axios from "axios";
 import Header from "../components/Header";
 import ActivityContainer from "../components/ActivityContainer";
 
 export default function Generator({ match }) {
   const submitHandler = (event) => {
     event.preventDefault();
-    let search = {
-      category: event.target.categories.value,
-      timer: event.target.timer.value,
-      players: event.target.players.value,
-    };
 
-    console.log(search);
+    let category = event.target.categories.value;
+    let timer = event.target.timer.value;
+    let players = event.target.players.value;
+
+    axios
+      .get(`http://localhost:5000/api/games/${category}/${timer}/${players}`)
+      .then((res) => {
+        console.log(res.data);
+      });
+    // console.log(search);
   };
 
   return (
