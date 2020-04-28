@@ -1,20 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Landing from "./pages/Landing";
-import Games from "./pages/Games";
-import Exercise from "./pages/Exercise";
-import Random from "./pages/Random";
+import Home from "./pages/Home";
+import Generator from "./pages/Generator";
+import Exercise from "./pages/About";
 
 function App() {
   return (
     <Router className="App">
-      <Header />
       <Switch>
-        <Route path="/" exact component={Landing} />
-        <Route path="/games" component={Games} />
-        <Route path="/exercise" component={Exercise} />
-        <Route path="/random" component={Random} />
+        <Route path="/" exact component={Home} />
+        <Route path="/generator" component={Generator} />
+        <Route path="/about" component={Exercise} />
       </Switch>
     </Router>
   );
