@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const http = require("http");
 const socketIo = require("socket.io");
 const cors = require("cors");
+const userSchema = require("./models/userSchema")
 require("dotenv").config();
 
 const PORT = process.env.PORT || 5000;
@@ -12,11 +13,11 @@ app.use(express.json());
 app.use(cors());
 
 //routes
+app.use("/api/login", require("./routes/login"))
 app.use("/api/games", require("./routes/game"));
 app.use("/api/calendar", require("./routes/calendar"));
 //Connect to Mongo
 
-// commenting this out cause i dont have the env vars file yet
 mongoose.connect(
   process.env.MONGODB_URI || process.env.Mongo_URI,
   { useCreateIndex: true, useUnifiedTopology: true, useNewUrlParser: true },
@@ -29,7 +30,6 @@ const server = http.createServer(app);
 
 const io = socketIo(server);
 
-let interval;
 let numUsers = 0;
 let names = [];
 io.on("connection", (socket) => {
