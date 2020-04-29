@@ -1,0 +1,52 @@
+.activity {
+    &--highlight {
+        color: #F9CA60;
+    }
+    &__card {
+        &-header {
+            color: black;
+            margin: 32px 50px;
+            font-size: 28px;
+        }
+        &-description {
+            font-size: 20px;
+            margin: 0px 50px;
+        }
+        &-calendar {
+            margin-left: 50px;
+            color: $togatherPurple;
+            font-size: 18px;
+        }
+        &-link {
+            font-weight: lighter;
+            margin: 26px 0;
+        }
+    }
+}
+.react-add-to-calendar__wrapper {
+    cursor: pointer;
+    margin:20px 0;
+}
+.react-add-to-calendar__dropdown {
+    span {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    ul {
+        margin-top: 10px;
+        width: 50%; 
+        list-style-type: none; 
+        position: absolute;
+       li {
+           padding: 3%;
+           background-color: #F2F1EE;
+           &:hover {
+            background-color: rgb(212, 212, 211);
+           }
+       }
+       li a {
+           color:black;
+           text-decoration: none;
+       }
+    }
+}

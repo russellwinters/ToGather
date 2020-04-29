@@ -1,13 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import RedPlayer from "../assets/Icons-svgs/Player-red.svg";
 import BlueTimer from "../assets/Icons-svgs/Timer-blue.svg";
-
+import {Redirect} from "react-router-dom";
 export default function ActivityCards({ activity }) {
-  const { category, timer, players, name } = activity;
+  const [isClicked, setIsClicked] = useState(false)
+  const { category, timer, players, name, _id } = activity;
   const categoryStyle = category.toLowerCase();
   // console.log(categoryStyle);
 
-  return (
+  return isClicked === false ? (
     <section className="card">
       <div className="card__activity--filters">
         <div>
@@ -20,10 +21,10 @@ export default function ActivityCards({ activity }) {
         </div>
       </div>
       <div className="card__activity--name">{name}</div>
-      <button className="card__activity--select">Select Activity</button>
+      <button onClick = {() => setIsClicked(true)} className="card__activity--select">Select Activity</button>
       <div className={`card__activity--category ${categoryStyle}`}>
         {category.toUpperCase()}
       </div>
     </section>
-  );
+  ) : (<Redirect to = {`/activity/${_id}`}/>) ;
 }

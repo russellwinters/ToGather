@@ -7,7 +7,7 @@ import LogoEclipse from "../assets/logoEclipse.svg";
 export default function Header({ match }) {
   //Tedious way of making active links
   let linkArray = [
-    ["/", "Home"],
+    ["/home", "Home"],
     ["/generator", "Generators"],
     ["/about", "About"],
   ];

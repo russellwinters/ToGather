@@ -5,6 +5,9 @@
   margin: 0 auto;
 
   .card {
+    &--activity {
+      top: -94px;
+    }
     width: calc((100% - 40px) / 3);
     position: relative;
     top: -129px;
@@ -55,6 +58,7 @@
     }
 
     &__activity--select {
+      transition: 0.3s;
       position: absolute;
       top: 210px;
       left: 50%;
