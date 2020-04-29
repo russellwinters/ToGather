@@ -7,9 +7,8 @@ import LogoEclipse from "../assets/logoEclipse.svg";
 export default function Header({ match }) {
   //Tedious way of making active links
   let linkArray = [
-    ["/home", "Home"],
-    ["/generator", "Generators"],
-    ["/about", "About"],
+    ["/generator", "Explore Activities"],
+    ["/dashboard", "My Dashboard"],
   ];
 
   const LINKS = linkArray.map((obj, i) => {
@@ -29,18 +28,20 @@ export default function Header({ match }) {
 
   return (
     <header className="header">
-      <div className="header__logo">
+      <Link to="/" className="header__logo">
         <img className="header__logo--text" src={LogoText} alt="ToGather" />
         <img
           className="header__logo--eclipse"
           src={LogoEclipse}
           alt="eclipse"
         />
+      </Link>
+
+      <div className="header__navbar">
+        <nav className="header__navbar--nav">{LINKS}</nav>
+
+        <ProfileNav />
       </div>
-
-      <nav className="header__nav">{LINKS}</nav>
-
-      <ProfileNav />
     </header>
   );
 }
