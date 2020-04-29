@@ -13,33 +13,138 @@
 
   &__categories {
     width: 216px;
+    background-color: #6dc0c8;
+    display: flex;
 
-    & * {
-      width: 100%;
+    & img {
+      margin-left: 24px;
+      width: 24px;
+    }
+
+    & select {
+      color: #ffffff;
+      background-color: #6dc0c8;
+      padding-left: 12px;
+      border: none;
+      width: 126px;
+      appearance: none;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 27px;
+    }
+
+    & .arrow-down {
+      width: 14px;
+      margin-left: 0px;
+      margin-right: 14px;
+      z-index: 2;
     }
   }
 
   &__timer {
     width: 169px;
+    background-color: #6dc0c8;
+    display: flex;
 
-    & * {
-      width: 100%;
+    & img {
+      margin-left: 24px;
+      width: 24px;
+    }
+
+    & select {
+      color: #ffffff;
+      background-color: #6dc0c8;
+      padding-left: 12px;
+      border: none;
+      width: 79px;
+      appearance: none;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 27px;
+    }
+
+    & .arrow-down {
+      width: 14px;
+      margin-left: 0px;
+      margin-right: 14px;
+      z-index: 2;
     }
   }
 
   &__players {
     width: 188px;
+    background-color: #6dc0c8;
+    display: flex;
 
-    & * {
-      width: 100%;
+    & img {
+      margin-left: 24px;
+      width: 24px;
+    }
+
+    & select {
+      color: #ffffff;
+      background-color: #6dc0c8;
+      padding-left: 12px;
+      border: none;
+      width: 99px;
+      appearance: none;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 27px;
+    }
+
+    & .arrow-down {
+      width: 14px;
+      margin-left: 0px;
+      margin-right: 14px;
+      z-index: 2;
     }
   }
 
   &__button {
     width: 233px;
+    display: flex;
+    color: #ffffff;
+    background-color: #ffffff;
+    position: relative;
 
-    & * {
-      width: 100%;
+    & div {
+      position: absolute;
+      top: 16px;
+      left: 24px;
+      color: #ffffff;
+      background-color: #ffffff;
+      height: 24px;
+      width: 24px;
+      background-repeat: no-repeat;
+      background-image: url("../assets/Icons-svgs/New-activity-green.svg");
+    }
+
+    & button {
+      color: #2fa5b1;
+      background-color: #ffffff;
+      border: none;
+      width: 144px;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 27px;
+      position: absolute;
+      right: 24px;
+    }
+  }
+
+  &__button:hover {
+    background-color: #121212;
+
+    & div {
+      background-color: #121212;
+      color: #121212;
+      background-image: url("../assets/Icons-svgs/New-activity-white.svg");
+    }
+
+    & button {
+      background-color: #121212;
+      color: #ffffff;
     }
   }
 

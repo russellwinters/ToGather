@@ -69,6 +69,11 @@
       padding: 12px 40px;
     }
 
+    &__activity--select:hover {
+      color: #ffffff;
+      background-color: #9567e0;
+    }
+
     &__activity--category {
       width: 100%;
       height: 30px;

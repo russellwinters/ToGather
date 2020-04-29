@@ -6,6 +6,10 @@ import Header from "../components/Header";
 import ActivityContainer from "../components/ActivityContainer";
 
 //assets
+import WhiteArrowDown from "../assets/Icons-svgs/arrow-down.svg";
+import WhiteCategoryIcon from "../assets/Icons-svgs/categories-white.svg";
+import WhiteTimerIcon from "../assets/Icons-svgs/Timer-white.svg";
+import WhitePlayersIcon from "../assets/Icons-svgs/Player-white.svg";
 import BackgroundDots from "../assets/Icons-svgs/white-dots-for-background.svg";
 import Balloons from "../assets/Icons-svgs/balloons.svg";
 
@@ -22,9 +26,9 @@ export default function Generator({ match }) {
     axios
       .get(`http://localhost:5000/api/games/${category}/${timer}/${players}`)
       .then((res) => {
+        //setActivities
         console.log(res.data);
       });
-    // console.log(search);
   };
 
   return (
@@ -33,6 +37,7 @@ export default function Generator({ match }) {
 
       <form onSubmit={submitHandler} className="generator">
         <div className="generator__categories">
+          <img src={WhiteCategoryIcon} alt="Categories" />
           <select name="categories" defaultValue="">
             <option value="" disabled hidden>
               Categories
@@ -41,9 +46,11 @@ export default function Generator({ match }) {
             <option value="problem-solving">Problem-solving</option>
             <option value="creativity">Creativity</option>
           </select>
+          <img className="arrow-down" src={WhiteArrowDown} alt="arrow" />
         </div>
 
         <div className="generator__timer">
+          <img src={WhiteTimerIcon} alt="Timer" />
           <select name="timer" defaultValue="">
             <option value="" disabled hidden>
               Timer
@@ -52,9 +59,11 @@ export default function Generator({ match }) {
             <option value="15">15 Minutes</option>
             <option value="20">20 Minutes</option>
           </select>
+          <img className="arrow-down" src={WhiteArrowDown} alt="arrow" />
         </div>
 
         <div className="generator__players">
+          <img src={WhitePlayersIcon} alt="Players" />
           <select name="players" defaultValue="">
             <option value="" disabled hidden>
               Players
@@ -63,9 +72,11 @@ export default function Generator({ match }) {
             <option value="2">2 or More</option>
             <option value="4">4 or More</option>
           </select>
+          <img className="arrow-down" src={WhiteArrowDown} alt="arrow" />
         </div>
 
         <div className="generator__button">
+          <div>""</div>
           <button>New Activities</button>
         </div>
 
