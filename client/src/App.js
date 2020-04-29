@@ -16,9 +16,9 @@ function App() {
     <Router className="App">
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/activity/:activityId" exact component = {Activity}/>
+        <Route path="/activity/:activityId" exact component={Activity} />
         <Route path="/generator" component={Generator} />
-        <Route path="/about" component={Exercise} />
+        <Route path="/dashboard" component={Exercise} />
       </Switch>
     </Router>
   );

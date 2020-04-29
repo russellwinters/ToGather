@@ -21,50 +21,74 @@
     }
   }
 
-  &__nav {
-    width: 24vw;
+  &__navbar {
+    width: 44.4vw;
     display: flex;
     justify-content: space-between;
 
-    & * {
-      line-height: 24px;
-      font-size: 24px;
-      font-weight: 600;
-      text-decoration: none;
-      color: #716f6f;
-      padding: 0 8px;
+    &--nav {
+      width: 24vw;
+      display: flex;
+      justify-content: space-between;
+
+      & * {
+        line-height: 24px;
+        font-size: 18px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #716f6f;
+        padding: 0 8px;
+        padding-top: 11px;
+      }
+
+      .active-link {
+        color: #121212;
+        border-bottom: 4px solid #9567e0;
+      }
     }
 
-    .active-link {
-      color: #121212;
-      border-bottom: 4px solid #9567e0;
-    }
-  }
+    .header__profile {
+      width: 255px;
+      border-left: 2px solid #c4c4c4;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-  &__profile {
-    width: 16.25vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &--login {
-      width: 60px;
-      height: 25px;
-      font-size: 20px;
-      font-weight: 800;
-    }
-
-    &--signup {
-      width: 149px;
-      height: 52px;
-      padding: 10px 39px 14px 36px;
-      border: 3px solid #d3486e;
-      border-radius: 30px;
-      text-align: center;
-      line-height: 25px;
-      font-size: 20px;
-      font-weight: 600px;
-      color: #d3486e;
+      &--login {
+        width: 60px;
+        height: 48px;
+        padding: 11px 0 11px 56px;
+        // padding-left: 56px;
+        font-size: 20px;
+        font-weight: 800;
+      }
     }
   }
+
+  // &__profile {
+  //   width: 16.25vw;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   align-items: center;
+
+  //   &--login {
+  //     width: 60px;
+  //     height: 25px;
+  //     font-size: 20px;
+  //     font-weight: 800;
+  //   }
+
+  //   &--signup {
+  //     width: 149px;
+  //     height: 52px;
+  //     padding: 10px 39px 14px 36px;
+  //     border: 3px solid #d3486e;
+  //     border-radius: 30px;
+  //     text-align: center;
+  //     line-height: 25px;
+  //     font-size: 20px;
+  //     font-weight: 600px;
+  //     color: #d3486e;
+  //   }
+  // }
 }

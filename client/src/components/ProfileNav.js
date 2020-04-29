@@ -1,10 +1,11 @@
 import React from "react";
+import icon from "../assets/girl.svg";
 
 export default function ProfileNav() {
   const loggedOut = (
     <>
-      <span className="header__profile--login">Log In</span>
-      <span className="header__profile--signup">Sign Up</span>
+      <span className="header__profile--login">Notifications</span>
+      <img src={icon} alt="profileImg" />
     </>
   );
 
