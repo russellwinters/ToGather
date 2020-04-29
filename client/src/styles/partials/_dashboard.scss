@@ -1,0 +1,128 @@
+.dashboard-main {
+  height: 484px;
+  background-color: #f9ca60;
+  position: relative;
+
+  & h1 {
+    position: absolute;
+    top: 160px;
+    left: 122px;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 65px;
+    color: #ffffff;
+
+    & span {
+      color: #2fa5b1;
+    }
+  }
+
+  .background-dots {
+    position: absolute;
+    left: 58px;
+    top: 145px;
+    width: 200px;
+    height: 220px;
+  }
+
+  .girl-looking-img {
+    position: absolute;
+    top: 91px;
+    right: 151px;
+  }
+}
+
+.dashboard-cards__wrapper {
+  height: 458px;
+  background-color: #fffbf3;
+  position: relative;
+
+  .card-container {
+    position: absolute;
+    top: -134px;
+    left: 58px;
+    width: 92.2vw;
+
+    .dashboard-card {
+      width: calc((100% - 36px) / 4);
+      position: relative;
+      height: 480px;
+      background-color: #ffffff;
+      box-shadow: 3px 5px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+
+      & h3 {
+        height: 62px;
+        background-color: #2fa5b1;
+        border-radius: 8px 8px 0px 0px;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 38px;
+        color: #ffffff;
+        padding-top: 11px;
+        text-align: center;
+      }
+
+      .card-info {
+        margin-top: 12px;
+
+        & p {
+          height: 72px;
+          width: calc(100% - 68px);
+          margin: 0 auto;
+          padding: 12px 0;
+          text-align: center;
+          font-size: 16px;
+          line-height: 141.8%;
+          border-bottom: 1px solid #c4c4c4;
+
+          & span {
+            font-weight: bold;
+          }
+        }
+        .no-border {
+          border-bottom: none;
+        }
+      }
+
+      & button {
+        transition: 0.3s;
+        position: absolute;
+        top: 388px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 20px;
+        line-height: 27px;
+        font-weight: 600;
+        color: #9567e0;
+        background-color: transparent;
+        border: 2px solid #9567e0;
+        border-radius: 4px;
+        padding: 12px 40px;
+      }
+
+      & button:hover {
+        color: #ffffff;
+        background-color: #9567e0;
+      }
+
+      .card__badge {
+        height: 100px;
+        width: calc(100% - 80px);
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        & img {
+          margin-right: 20px;
+          width: 51px;
+        }
+
+        & span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
