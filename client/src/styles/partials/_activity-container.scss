@@ -1,0 +1,20 @@
+.activity__container {
+  height: 360px;
+  background-color: #fffbf3;
+  position: relative;
+
+  & h2 {
+    position: absolute;
+    top: -255px;
+    margin-left: 13.75vw;
+    height: 65px;
+    font-size: 48px;
+    font-weight: bold;
+    // font-family: sans-serif;
+    color: #ffffff;
+
+    & span {
+      color: #fed385;
+    }
+  }
+}

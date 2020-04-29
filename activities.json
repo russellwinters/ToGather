@@ -1,0 +1,76 @@
+[
+  {
+    "name": "Pictionary",
+    "category": "creativity",
+    "timer": 20,
+    "players": 2,
+    "rules": [
+      "Player 1 Draws an object",
+      "Player 2 tries to guess the object player 1 drew"
+    ]
+  },
+  {
+    "name": "Sudoku",
+    "category": "problem-solving",
+    "timer": 15,
+    "players": 1,
+    "rules": [
+      "Follow link provided and complete a puzzle! (Or at least try to)"
+    ],
+    "link": "https://www.websudoku.com"
+  },
+  {
+    "name": "Word Search",
+    "category": "problem-solving",
+    "timer": 10,
+    "players": 1,
+    "rules": [
+      "Follow link provided and complete a puzzle! (Or at least try to)"
+    ],
+    "link": "https://thewordsearch.com"
+  },
+  {
+    "name": "Charades",
+    "category": "movement",
+    "timer": 15,
+    "players": 2,
+    "rules": [
+      "Player 1 presents an act to the other players",
+      "Other players attempt to guess what player 1 is acting out"
+    ]
+  },
+  {
+    "name": "Wikipedia Game",
+    "category": "problem-solving link provided and complete a puzzle! (Or at least try to)",
+    "timer": 15,
+    "players": 2,
+    "rules": [
+      "Players think of two random pages that can be found on Wikipedia",
+      "Players then attempt to navigate from the first random page to the other using ONLY links in articles on Wikipedia"
+    ]
+  },
+  {
+    "name": "20 Questions",
+    "category": "problem-solving",
+    "timer": 10,
+    "players": 2,
+    "rules": [
+      "Players decide on a category to base the game off of",
+      "Player 1 thinks of an item in the category chosen",
+      "All other players ask 'Yes' or 'No' questions to find out what Player 1 is thinking",
+      "Player 1 wins if the others cannot guess their item in 20 guesses"
+    ]
+  },
+  {
+    "name": "Things Game",
+    "category": "creativity",
+    "timer": 20,
+    "players": 4,
+    "rules": [
+      "Player 1 asks a question starting with the word 'Things'",
+      "Other Players send a response they feel is funny",
+      "Player 1 reads out the responses received",
+      "Other players vote on the best response (no voting for yourself)"
+    ]
+  }
+]

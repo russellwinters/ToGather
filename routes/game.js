@@ -1,22 +1,50 @@
 const express = require("express");
 const router = express.Router();
 const GameModel = require("../models/gameModel");
+const activitiesArray = require("../activities.json");
 
-router.post("/postFirst", (req, res) => {
-  console.log("received");
-  let rulesArray = [
-    "Current player thinks of a their 'things': example would be 'things I wish Trump didn't say' ",
-    "All other players think of creative responses and DM Current Player.",
-    "Current Player reads out the responses and all other players vote on the best.",
-    "Best response receives one point",
-  ];
-  let newGame = new GameModel({
-    name: "Things",
-    rules: rulesArray,
-    scoring: "One point per round, awarded for the funniest answer",
+router.get("/:category/:timer/:players", async (req, res) => {
+  const { category, timer, players } = req.params;
+
+  let reqTimer = Number(timer);
+  let reqPlayers = Number(players);
+
+  //Take the extra step in case we want to specialized sorting. Easy enough to lock in what we have though
+  let activities = await GameModel.find();
+
+  let returnActivities = activities.filter((obj) => {
+    return (
+      obj.category === category &&
+      obj.timer === reqTimer &&
+      obj.players === reqPlayers
+    );
   });
-  newGame.save().then((data) => {
-    console.log("saved");
+  console.log(returnActivities);
+  if (returnActivities && returnActivities.length > 0) {
+    res.json({
+      activities: returnActivities,
+    });
+  } else {
+    res.json({
+      message: "No Activities Match your search",
+    });
+  }
+});
+
+//Only here if we need to send new activities to Mongo
+router.post("/postFirst", (req, res) => {
+  activitiesArray.forEach((obj) => {
+    let newGame = new GameModel({
+      name: obj.name,
+      rules: obj.rules,
+      category: obj.category,
+      timer: obj.timer,
+      players: obj.players,
+    });
+
+    newGame.save().then((data) => {
+      console.log("Saved Activity");
+    });
   });
 
   res.json({
