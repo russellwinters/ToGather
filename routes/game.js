@@ -3,6 +3,41 @@ const router = express.Router();
 const GameModel = require("../models/gameModel");
 const activitiesArray = require("../activities.json");
 
+router.get("/oneActivity/:id", async(req,res) => {
+  try {
+    const {id} = req.params;
+    const response = await GameModel.findOne({_id:id});
+    res.json(response)
+  } catch(e) {
+    console.log(e);
+    res.sendStatus(400);
+  }
+
+  
+})
+router.get("/random", async(req,res) => {
+  //sorry this function sucks 2 tired 2 think 😭
+  try {
+    console.log("invoked");
+    const randomActivities = [];
+    let randomNums = [];
+    let allActivities = await GameModel.find();
+    console.log(allActivities)
+    while(randomActivities.length !== 3) {
+      let random = Math.floor(Math.random() * allActivities.length);
+      if(randomNums.includes(random.toString())) {
+        console.log("exists")
+      } else {
+        randomNums.push(random.toString());
+        randomActivities.push(allActivities[random])
+      }
+    }
+    res.json(randomActivities)
+  } catch (e) {
+    console.log(e)
+    res.sendStatus(400);
+  }
+});
 router.get("/:category/:timer/:players", async (req, res) => {
   const { category, timer, players } = req.params;
 
@@ -22,12 +57,11 @@ router.get("/:category/:timer/:players", async (req, res) => {
   console.log(returnActivities);
   if (returnActivities && returnActivities.length > 0) {
     res.json({
+      message: "Success",
       activities: returnActivities,
     });
   } else {
-    res.json({
-      message: "No Activities Match your search",
-    });
+    res.json({message: "None Found"});
   }
 });
 

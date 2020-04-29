@@ -1,17 +1,8 @@
 import React, {useEffect, useState} from "react";
 import ActivityCards from "./ActivityCards";
 import axios from 'axios';
-export default function ActivityContainer({ activities }) {
-  const [tasks, setTasks] = useState(undefined);
-  useEffect(() => {
-    const fetch = async() => {
-      const res = await axios.get("http://localhost:5000/api/games/random")
-      console.log(res);
-      setTasks(res.data);
-    }
-     fetch();
+export default function ActivityContainer({ activities }, isRefreshed) {
 
-  },[])
   //Just here while Mongo doesn't have enough activities
   // if (activities.length < 3) {
   //   console.log("Not enough activities");
@@ -67,17 +58,18 @@ export default function ActivityContainer({ activities }) {
   //   name: "Get Up for some Yoga Stretches",
   // };
 
-  return tasks !== undefined ? (
+  return  (
     <section className="activity__container">
         <h2>
          Take a <span>Break</span> and...
          </h2>
       <div className="card-container">
-      {tasks.map(item => {
+      
+      {activities.length === 0 ? <h1 className = "none">None Found</h1> : activities.map(item => {
         return <ActivityCards activity = {item}/>
         })
       } 
       </div>
     </section>
-  ) : <h1>Loading....</h1>;
+  );
 }

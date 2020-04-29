@@ -1,6 +1,7 @@
-module.exports = function(socket) {
-    let numUsers = 0;
+let numUsers = 0;
 let names = [];
+
+module.exports = function(socket) {
 
   let addedUser = false;
   socket.emit('get all online', {
@@ -19,13 +20,13 @@ let names = [];
     socket.broadcast.to(data.id).emit("test",data.message)
   })
 
-  socket.on('add user', (username) => {
+  socket.on('add user', (data) => {
     if (addedUser) return;
     console.log(socket.id)
     // we store the username in the socket session for this client
-    socket.username = username;
+    socket.username = data.username;
     ++numUsers;
-    names.push({username: socket.username, id: socket.id});
+    names.push({username: socket.username, id: socket.id, userId: data._id});
     addedUser = true;
     console.log(names);
     socket.emit('login', {

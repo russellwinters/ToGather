@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 //components
@@ -14,8 +14,16 @@ import BackgroundDots from "../assets/Icons-svgs/white-dots-for-background.svg";
 import Balloons from "../assets/Icons-svgs/balloons.svg";
 
 export default function Generator({ match }) {
-  const [activities, setActivities] = useState([]);
+  const [activities, setActivities] = useState(undefined);
+  useEffect(() => {
+    const fetch = async() => {
+      const res = await axios.get("http://localhost:5000/api/games/random")
+      console.log(res);
+      setActivities(res.data);
+    }
+     fetch();
 
+  },[])
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -26,12 +34,17 @@ export default function Generator({ match }) {
     axios
       .get(`http://localhost:5000/api/games/${category}/${timer}/${players}`)
       .then((res) => {
-        //setActivities
-        console.log(res.data);
+        console.log(res)
+        if(res.data.message === "None Found") {
+          setActivities([]);
+        } else {
+          console.log('success')
+          setActivities(res.data.activities);
+        }
       });
   };
 
-  return (
+  return activities !== undefined? (
     <div>
       <Header match={match} />
 
@@ -85,5 +98,5 @@ export default function Generator({ match }) {
       </form>
       <ActivityContainer activities={activities} />
     </div>
-  );
+  ): (<h1>Loading</h1>);
 }

@@ -96,7 +96,7 @@ export default function Activity({match}) {
           </header>
           <div className="card-container">
             <Card header = {"Tips"} description = {rules[0]}/>
-            <Card header = {"Details"} description = {rules[0]}/>
+            <Card header = {"Details"} description = {rules[0]} link = {link}/>
             <Card header = {"Share"} calendar = {calendar}/>
           </div>
       </section>

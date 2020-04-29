@@ -1,7 +1,7 @@
 import React from 'react'
 import AddToCalendar from 'react-add-to-calendar';
 export default function Card(props) {
-    const {header, description,calendar } = props
+    const {header, description,calendar,link } = props
     const item = [
       { google: 'Google' },
       { outlook: 'Outlook' },
@@ -13,7 +13,7 @@ export default function Card(props) {
             <h3 className = "activity__card-description">{description}</h3>
             {
                 header === "Details" ? 
-                <button className="card__activity--select">Start Now</button> : 
+                <a href = {link}><button className="card__activity--select">Start Now</button></a> : 
                 header === "Share" ?
                 <div className = "activity__card-calendar" >
                     <AddToCalendar event = {calendar} listItems={item}/>
