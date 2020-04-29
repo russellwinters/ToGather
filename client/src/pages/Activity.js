@@ -92,7 +92,7 @@ export default function Activity({match}) {
       </form>
       <section className="activity__container">
           <header>
-            <h2>The <span className = "activity--highlight">Activity</span> you have chosen is <br/>{slogan} <span className = "activity--highlight">{name}</span></h2>
+            <h2>The <span className = "activity--highlight">Activity</span> you have chosen is... <br/>{slogan} <span className = "activity--highlight">{name}</span></h2>
           </header>
           <div className="card-container">
             <Card header = {"Tips"} description = {rules[0]}/>
