@@ -11,6 +11,7 @@ import imgtwo from "../assets/landing_page/vector.png"
 import imgthree from "../assets/landing_page/vector2.png";
 import headertwo from "../assets/landing_page/headertwo.png"
 import texttwo from "../assets/landing_page/textwo.png"
+import bubbles from "../assets/landing_page/bubbles.png"
 export default function Home({ match }) {
   return (
     <>
@@ -20,6 +21,7 @@ export default function Home({ match }) {
         <header>
           <img src = {title} alt = "title"/>
           <button className = "home__hero-call-to-action">Explore New Activities</button>
+          <img className= "bubbles" src = {bubbles}/>
           </header>
       </section>
       <div className = "home__box">
