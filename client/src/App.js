@@ -31,6 +31,7 @@ function App() {
       setOnlineUsers([...onlineUsers, {username: data.username, id: data.id}]);
     })
     return () => {
+      socket.off('test');
       socket.off('get all online');
       socket.off("user left");
       socket.off('user joined');
